@@ -1,0 +1,179 @@
+<div style="padding: 50px;">
+ <form [formGroup]="regForm">
+    <nb-card>
+     <nb-card-body>
+        <nb-stepper #stepper disableStepNavigation="true" orientation="horizontal">
+            <nb-step label="Личные данные">
+            <ng-template #labelOne>Личные данные</ng-template>
+            <h4>Заполнение личных данных #1</h4>
+            <div class="input-form">
+                <label for="name">Имя</label>
+                <input [status]="name?.dirty ? (name?.invalid ? 'danger' : 'success') : ''" 
+                    formControlName="name" type="text" nbInput>
+                <label for="phone">Телефон</label>
+                <nb-form-field>
+                    <span style="margin-top: -1px;" nbPrefix>+7</span>
+                    <input [status]="phone?.dirty ? (phone?.invalid ? 'danger' : 'success') : ''" 
+                        formControlName="phone" 
+                        type="text" nbInput>
+                </nb-form-field>
+                <nb-checkbox (checkedChange)="personalDataAllowUse = !personalDataAllowUse">Согласие на обработку данных</nb-checkbox>
+                <div style="display: flex; flex-direction: row;">
+                    <button [disabled]="( (name && name.invalid) || (phone && phone.invalid) ) || personalDataAllowUse==false " (click)="loadProducts()" style="margin-right: 10px;" nbButton nbStepperNext>Дальше</button>
+                </div>
+            </div>
+            </nb-step>
+            <nb-step label="Потверждение покупок">
+            <ng-template #labelTwo>Потверждение покупок</ng-template>
+            <h4>Потверждение покупок #2</h4>
+            <div *ngFor="let product of products">
+                <nb-card>
+                  <nb-card-header>
+                      <div class="card-header">
+                        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                            <h3>
+                                {{product.name}}
+                            </h3>
+                            <i (click)="deleteProduct(product.id)" class="pi pi-times"></i>
+                        </div>
+                          <br>
+                          <a>Стоимость: {{product.price}}</a>
+                      </div>
+                  </nb-card-header>
+                  <nb-card-body>
+                      <div class="card-body">
+                        <a *ngFor="let prop of product.properties | keyvalue">
+                          <br>
+                          {{getFormattedProperty(prop)}}
+                        </a>
+                      </div>
+                  </nb-card-body>
+                  <nb-card-footer>
+                  </nb-card-footer>
+                </nb-card>
+            </div>
+            <button nbButton style="margin-right: 10px;" nbStepperPrevious>Вернуться</button>
+            <button nbButton [disabled]="products.length == 0" nbStepperNext>Дальше</button>
+            </nb-step>
+            <nb-step label="Снилс">
+                <h4>Снилс #3</h4>
+                <div class="input-form">
+                    <label for="name">Номер Снилса</label>
+                    <input [status]="snils?.dirty ? (snils?.invalid ? 'danger' : 'success') : ''" 
+                        formControlName="snils" type="text" nbInput>
+                    <label for="snilsPhoto">Фото снилса</label>
+                    <input type="file" formControlName="snilsPhoto" (change)="inImageUpload($event)">
+                    <img width="200" height="150" #snilsPreview src="#" alt="снилс" />
+                    <div style="display: flex; flex-direction: row;">
+                        <button nbButton style="margin-right: 10px;" nbStepperPrevious>Вернуться</button>
+                        <button [disabled]="(snils && snils.invalid || snilsPhoto && snilsPhoto.invalid ) || !uploadSnils" style="margin-right: 10px;" nbButton nbStepperNext>Дальше</button>
+                    </div>
+                </div>
+            </nb-step>
+            <nb-step label="Доставка">
+                <h4>Выбор способа доставки #4</h4>
+                <nb-card>
+                    <nb-card-header>Доставка {{ selectedSendOption?.value ==  undefined ? "" : getSelectedSendOptionLabel()}}</nb-card-header>
+                    <nb-card-body>
+                      <nb-radio-group formControlName="selectedSendOption">
+                        <nb-radio
+                          *ngFor="let option of options"
+                          [value]="option.value">
+                          {{ option.label }}
+                        </nb-radio>
+                      </nb-radio-group>
+                      <nb-select *ngIf="isSelectedSelfReciver()" placeholder="Выберите город" 
+                            [(selected)]="selectedCity">
+                        <nb-option value="0">Москва</nb-option>
+                        <nb-option value="1">Воронеж</nb-option>
+                      </nb-select>
+                      <div *ngIf="isSelectedPostOffice()" class="input-form">
+                            <label for="fio">ФИО</label>
+                            <input [status]="fio?.dirty ? (fio?.invalid ? 'danger' : 'success') : ''" 
+                                formControlName="fio" type="text" nbInput>
+                            <label for="receieverPhone">Телефон получателя</label>
+                            <nb-form-field>
+                                <span style="margin-top: -1px;" nbPrefix>+7</span>
+                                <input [status]="receieverPhone?.dirty ? (receieverPhone?.invalid ? 'danger' : 'success') : ''" 
+                                    formControlName="receieverPhone" 
+                                    type="text" nbInput>
+                            </nb-form-field>
+                            <label for="index">Индекс</label>
+                            <input [status]="index?.dirty ? (index?.invalid ? 'danger' : 'success') : ''" 
+                                formControlName="index" type="text" nbInput>
+                            <label for="address">Адрес</label>
+                            <input [status]="address?.dirty ? (address?.invalid ? 'danger' : 'success') : ''" 
+                                    formControlName="address" type="text" nbInput>
+                        </div>
+                    </nb-card-body>
+                  </nb-card>
+                  <div style="display: flex; flex-direction: row;">
+                    <button nbButton style="margin-right: 10px;" nbStepperPrevious>Вернуться</button>
+                    <button [disabled]="isDisabledSenderSubmitStep()" style="margin-right: 10px;" nbButton nbStepperNext>Дальше</button>
+                  </div>
+            </nb-step>
+            <nb-step label="Отправка">
+                <h4>Данные для отправки #5</h4>
+                <div class="input-form">
+                    <p>Имя: {{name?.value}}</p>
+                    <p>Телефон: {{phone?.value}} </p>
+                    <p>Продукты: </p>
+                    <div *ngFor="let product of products">
+                        <p>Id: {{product.id}}, Имя продукта: {{product.name}}, Цена: {{product.price}}, 
+                            <a *ngFor="let prop of product.properties | keyvalue">
+                            {{getFormattedProperty(prop)}}
+                            </a> 
+                        </p>
+                    </div>
+                    <p>
+                        Номер снилса: {{ snils?.value }}
+                    </p>
+                    <p>
+                        Фото снилса: 
+                    </p>
+                    <img width="200" height="150" src="{{uploadedSnilsUrl}}" alt="снилс" />
+                    <p>
+                        Способ доставки: {{ getSelectedSendOptionLabel() }}
+                    </p>
+                    <div *ngIf="isSelectedSelfReciver()">
+                        <p>
+                            Город доставки: {{ getSelectedCity()  }}
+                        </p>
+                    </div>
+                    <div *ngIf="isSelectedPostOffice()">
+                        <p>
+                            ФИО: {{ fio?.value }}
+                        </p>
+                        <p>
+                            Телефон получателя: {{ receieverPhone?.value }}
+                        </p>
+                        <p>
+                            Индекс: {{ index?.value }}
+                        </p>
+                        <p>
+                            Адрес: {{ address?.value }}
+                        </p>
+                    </div>
+                    <p>Загрузка: {{uploadingParts}}</p>
+                    <p *ngIf="snilsError" style="color:red">Снилс не был загружен, <a (click)="reloadSnils()">Перезагрузить</a></p>
+                    <p *ngIf="personalDataError" style="color:red">Личные данные не были загружены, <button nbButton (click)="reloadPersonalData()">Перезагрузить</button></p>
+                    <p *ngIf="sendDataError" style="color:red">Данные об отправке не были загружены, <button nbButton (click)="reloadSendData()">Перезагрузить</button></p>
+                    <nb-progress-bar status="primary" [displayValue]="true" [value]="orderUploadProgress"></nb-progress-bar>
+                    <div style="display: flex; flex-direction: row;">
+                        <button nbButton style="margin-right: 10px;" nbStepperPrevious>Вернуться</button>
+                        <button [disabled]="sendDataError || personalDataError || snilsError" (click)="sendOrder()" style="margin-right: 10px;" nbButton>Отправить заказ</button>
+                    </div>
+                </div>
+            </nb-step>
+            <nb-step label="Результат">
+                <h4>Результат</h4>
+                <div class="input-form">
+                    <label>Номер заказа</label>
+                    <label>{{orderId}}</label>
+                </div>
+            </nb-step>
+        </nb-stepper>
+        </nb-card-body>
+    </nb-card>
+  </form>
+</div>

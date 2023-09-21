@@ -1,0 +1,22 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <ul class="nav-bar">
+      <li [routerLink]="['/market']">Магазин </li>
+      <li><app-busket></app-busket></li>
+    </ul>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <body>
+      <main class="container">
+        <router-outlet></router-outlet>
+      </main>
+    </body>
+    
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  </nb-layout-footer>
+
+</nb-layout>

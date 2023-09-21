@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@import '@angular/cdk/overlay-prebuilt.css';
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-bar {
+  list-style: none;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-bar li {
+  display: inline;
+  margin-right: 55px;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+}

@@ -1,0 +1,10 @@
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form > * {
+    margin-top: 5px;
+    user-select: none; 
+}

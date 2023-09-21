@@ -1,0 +1,52 @@
+.busket-body {
+    width: 500px;
+    overflow: auto;
+    height: 650px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.busket-body > div  {
+    list-style-type: none;
+    border-bottom: solid 1px #8b8b8b;
+    padding: 18px 0;
+}
+  
+.busket-body > div:last-child {
+    border-bottom: none;
+}
+
+.busket {
+    margin-right: 25px;
+}
+
+.deleteProduct {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.line { 
+    border-left: 2px solid #ccc;
+    margin-left: 20px; 
+    padding-left: 10px;
+}
+
+.closeBusket {
+    position: fixed;
+    margin-left: 450px;
+}
+
+.fixedBtwsColumm {
+    display: flex; 
+    flex-direction: column; 
+    align-items:end; 
+    margin-right: 20px;
+}
+
+.clearBtw {
+    margin-right: 20px;
+}
