@@ -1,0 +1,12 @@
+D:\work\Test.Domain\bin\Debug\net7.0\Test.OrdersDomain.deps.json
+D:\work\Test.Domain\bin\Debug\net7.0\Test.OrdersDomain.dll
+D:\work\Test.Domain\bin\Debug\net7.0\Test.OrdersDomain.pdb
+D:\work\Test.Domain\obj\Debug\net7.0\Test.OrdersDomain.csproj.AssemblyReference.cache
+D:\work\Test.Domain\obj\Debug\net7.0\Test.OrdersDomain.GeneratedMSBuildEditorConfig.editorconfig
+D:\work\Test.Domain\obj\Debug\net7.0\Test.OrdersDomain.AssemblyInfoInputs.cache
+D:\work\Test.Domain\obj\Debug\net7.0\Test.OrdersDomain.AssemblyInfo.cs
+D:\work\Test.Domain\obj\Debug\net7.0\Test.OrdersDomain.csproj.CoreCompileInputs.cache
+D:\work\Test.Domain\obj\Debug\net7.0\Test.OrdersDomain.dll
+D:\work\Test.Domain\obj\Debug\net7.0\refint\Test.OrdersDomain.dll
+D:\work\Test.Domain\obj\Debug\net7.0\Test.OrdersDomain.pdb
+D:\work\Test.Domain\obj\Debug\net7.0\ref\Test.OrdersDomain.dll
