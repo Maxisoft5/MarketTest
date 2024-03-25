@@ -1,0 +1,40 @@
+<div class="market-bar">
+  <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px'}" [numVisible]="5">
+    <ng-template pTemplate="item" let-item>
+        <img [src]="item.previewImageSrc" style="width: 100%;" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+        <div class="grid grid-nogutter justify-content-center">
+            <img [src]="item.thumbnailImageSrc" />
+        </div>
+    </ng-template>
+</p-galleria>
+
+</div>
+<div class="products-grid">
+  <div class="card-container" *ngFor="let product of products">
+    <nb-card status="primary" class="product-card">
+      <nb-card-header>
+          <div class="card-header">
+              <h3 style="color: white;">
+                  {{product.name}}
+              </h3>
+              <br>
+              <a>Стоимость: {{product.price}}</a>
+          </div>
+      </nb-card-header>
+      <nb-card-body>
+          <div class="card-body">
+            <a *ngFor="let prop of product.properties | keyvalue">
+              <br>
+              {{getProductProperty(prop)}}
+            </a>
+          </div>
+          <button class="add-to-busket-btw btn btn-primary" (click)="addToBusket(product)" 
+            status="primary">Добавить в корзину</button>
+      </nb-card-body>
+      <nb-card-footer>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>

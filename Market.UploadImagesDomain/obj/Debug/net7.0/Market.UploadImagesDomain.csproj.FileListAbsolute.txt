@@ -1,0 +1,12 @@
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\bin\Debug\net7.0\Market.UploadImagesDomain.deps.json
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\bin\Debug\net7.0\Market.UploadImagesDomain.dll
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\bin\Debug\net7.0\Market.UploadImagesDomain.pdb
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\Market.UploadImagesDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\Market.UploadImagesDomain.AssemblyInfoInputs.cache
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\Market.UploadImagesDomain.AssemblyInfo.cs
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\Market.UploadImagesDomain.csproj.CoreCompileInputs.cache
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\Market.UploadImagesDomain.sourcelink.json
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\Market.UploadImagesDomain.dll
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\refint\Market.UploadImagesDomain.dll
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\Market.UploadImagesDomain.pdb
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.UploadImagesDomain\obj\Debug\net7.0\ref\Market.UploadImagesDomain.dll

@@ -1,0 +1,13 @@
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\bin\Debug\net7.0\Market.OrdersDomain.deps.json
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\bin\Debug\net7.0\Market.OrdersDomain.dll
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\bin\Debug\net7.0\Market.OrdersDomain.pdb
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\Market.OrdersDomain.csproj.AssemblyReference.cache
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\Market.OrdersDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\Market.OrdersDomain.AssemblyInfoInputs.cache
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\Market.OrdersDomain.AssemblyInfo.cs
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\Market.OrdersDomain.csproj.CoreCompileInputs.cache
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\Market.OrdersDomain.sourcelink.json
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\Market.OrdersDomain.dll
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\refint\Market.OrdersDomain.dll
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\Market.OrdersDomain.pdb
+C:\Users\Maksym\Documents\GitHub\MarketTest\Market.OrderDomain\obj\Debug\net7.0\ref\Market.OrdersDomain.dll
